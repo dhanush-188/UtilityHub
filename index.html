@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+            <div class="left-section">
+                <div class="logo-section" onclick="switchApp('welcome')">
+                    <div class="logo-text">D!!D</div>
+                    <div class="home-icon">🏠</div>
+                </div>
+                
+                <div class="sidebar">
+                    <button class="app-button" data-app="quote" >
+                        <div class="app-icon"   data-tooltip="Quote Generator" style="background-image: url('🧠');" >📝</div>
+                    </button>
+                    <button class="app-button" data-app="password" >
+                        <div class="app-icon"  data-tooltip="Password Generator" style="background-image: url('🔒');">🔒</div>
+                    </button>
+                    <button class="app-button" data-app="hex" >
+                        <div class="app-icon"   data-tooltip="Random Hex Generator" style="background-image: url('🎨');">🎨</div>
+                    </button>
+                    <button class="app-button" data-app="paragraph" >
+                        <div class="app-icon"  data-tooltip="Paragraph Generator" style="background-image: url('📝');">📄</div>
+                    </button>
+                    <button class="app-button" data-app="expense" >
+                        <div class="app-icon"  data-tooltip="Expense Tracker" style="background-image: url('💰');">💰</div>
+                    </button>
+                    <button class="app-button" data-app="todo" >
+                        <div class="app-icon"  data-tooltip="Todo App" style="background-image: url('✅');">✅</div>
+                    </button>
+                    <button class="app-button" data-app="tts">
+                        <div class="app-icon"  data-tooltip="Text to Speech" style="background-image: url('🔊');">🔊</div>
+                    </button>
+                    <button class="app-button" data-app="bmi" >
+                        <div class="app-icon"  data-tooltip="BMI Calculator" style"="background-image: url('⚖️');">⚖️</div>
+                    </button>
+                    <button class="app-button" data-app="loan" >
+                        <div class="app-icon" data-tooltip="Loan Calculator" style="background-image: url('🏦');">🏦</div>
+                    </button>
+                    <button class="app-button" data-app="tip"   >
+                        <div class="app-icon"  data-tooltip="Tip Calculator" style="background-image: url('💵');">💵</div>
+                    </button>
+                    <button class="app-button" data-app="fixed-deposit" >
+                        <div class="app-icon" data-tooltip="Fixed Deposit Calculator" style="background-image: url('💎');">💎</div>
+                    </button>
+                    <button class="app-button" data-app="age">
+                        <div class="app-icon" data-tooltip="Age Calculator" style="background-image: url('📅');">📅</div>
+                    </button>
+                    <button class="app-button" data-app="stopwatch" >
+                        <div class="app-icon" data-tooltip="Stopwatch" style="background-image: url('⏱️');">⏱️</div>
+                    </button>
+                    <button class="app-button" data-app="notes" >
+                        <div class="app-icon" data-tooltip="Notes" style="background-image: url('📋');">📋</div>
+                    </button>
+                    <button class="app-button" data-app="poll" >
+                        <div class="app-icon" data-tooltip="Poll System" style="background-image: url('📊');">📊</div>
+                    </button>
+                    <button class="app-button" data-app="dictionary">
+                        <div class="app-icon" data-tooltip="Dictionary" style="background-image: url('📚');">📚</div>
+                    </button>
+                </div>
+            </div>
+    
+            <div class="right-section">
+                <div class="top-nav">
+                    <button class="nav-button" data-app="quote">Quote Generator</button>
+                    <button class="nav-button" data-app="password">Password Generator</button>
+                    <button class="nav-button" data-app="hex">Random Hex</button>
+                    <button class="nav-button" data-app="paragraph">Paragraph Generator</button>
+                    <button class="nav-button" data-app="expense">Expense Tracker</button>
+                    <button class="nav-button" data-app="todo">Todo</button>
+                    <button class="nav-button" data-app="tts">Text to Speech</button>
+                    <button class="nav-button" data-app="bmi">BMI Calculator</button>
+                    <button class="nav-button" data-app="loan">Loan Calculator</button>
+                    <button class="nav-button" data-app="tip">Tip Calculator</button>
+                    <button class="nav-button" data-app="fixed-deposit">Fixed Deposit Calculator</button>
+                    <button class="nav-button" data-app="age">Age Calculator</button>
+                    <button class="nav-button" data-app="stopwatch">Stopwatch</button>
+                    <button class="nav-button" data-app="notes">Notes</button>
+                    <button class="nav-button" data-app="poll">Poll System</button>
+                    <button class="nav-button" data-app="dictionary">Dictionary</button>
+                </div>
+    
+                <div class="main-content">
+                    <div class="welcome-screen" id="welcome">
+                        <div class="welcome-content">
+                            <h1>Welcome to D!!D</h1>
+                            <p class="subtitle">Your All-in-One Utility App Collection</p>
+                            <p class="description">
+                                Discover a wide range of tools to simplify your daily tasks. 
+                                From productivity boosters to fun generators, we've got you covered.
+                            </p>
+                            <button class="btn" onclick="goHome()">Explore Apps</button>                        </div>
+                    </div>
+                    <!-- Quote Generator -->
+<div class="app-content" id="quote">
+    <div class="app-title">Random Quote Generator</div>
+    <div class="quote-container">
+        <div class="quote-display">
+            <div class="result-box" id="quote-result">
+                <div class="quote-text">Click the button for wisdom!</div>
+            </div>
+            <button class="btn generate-btn" onclick="generateQuote()">Generate Quote</button>
+        </div>
+        <div class="quote-history">
+            <h3>Quote History</h3>
+            <div id="history-list"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Password Generator -->
+<div class="app-content" id="password">
+    <div class="app-title">Password Generator</div>
+    <div class="password-container">
+        <div class="password-controls">
+            <div class="input-group">
+                <label for="password-length">Password Length: <span id="length-value" class="length-display">12</span></label>
+                <input type="range" id="password-length" class="range-slider" min="4" max="50" value="12">
+            </div>
+            
+            <div class="checkbox-group">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="include-uppercase" checked>
+                    <label for="include-uppercase">Uppercase (A-Z)</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="include-lowercase" checked>
+                    <label for="include-lowercase">Lowercase (a-z)</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="include-numbers" checked>
+                    <label for="include-numbers">Numbers (0-9)</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="include-symbols">
+                    <label for="include-symbols">Symbols (!@#$)</label>
+                </div>
+            </div>
+            
+            <button class="generate-btn" onclick="generatePassword()">Generate Password</button>
+            
+            <div class="strength-indicator">
+                <span class="strength-label">Strength:</span>
+                <div class="strength-bar">
+                    <div class="strength-fill" id="strength-fill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="password-result-container">
+            <div class="password-result empty" id="password-result">Your password will appear here</div>
+            <button class="copy-btn" onclick="copyPassword()">Copy</button>
+        </div>
+    </div>
+</div>
+    
+                    <!-- Random Hex Generator -->
+                    <!-- Replace the hex generator section in index.html -->
+                    <div class="app-content" id="hex">
+                        <div class="app-title">Random Hex Color Generator</div>
+                        <div class="hex-controls">
+                            <div class="input-group">
+                                <label for="color-count">Number of Colors:</label>
+                                <input type="number" id="color-count" value="12" min="1" max="50">
+                            </div>
+                            <button class="btn" onclick="generateHex()">Generate Colors</button>
+                        </div>
+                        <div class="color-grid" id="hex-result"></div>
+                    </div>
+                    
+<!-- Real-time Paragraph Generator -->
+<div class="app-content" id="paragraph">
+    <div class="app-title">Paragraph Generator</div>
+    <div class="paragraph-container">
+        <div class="input-group">
+            <label for="paragraph-topic">Ask about anything:</label>
+            <input type="text" id="paragraph-topic" placeholder="e.g., Quantum physics, Renaissance art, Blockchain technology">
+        </div>
+        <div class="input-group">
+            <label for="paragraph-count">Paragraphs:</label>
+            <input type="number" id="paragraph-count" min="1" max="10" value="3">
+        </div>
+        <button class="btn generate-btn" onclick="generateAIParagraphs()">Generate Knowledge</button>
+        <div class="result-box" id="paragraph-result">
+            <div class="placeholder-text">Enter any topic to generate expert knowledge</div>
+        </div>
+    </div>
+</div>
+                    <!-- Expense Tracker -->
+<div class="app-content" id="expense">
+    <div class="app-title">Expense Tracker</div>
+    <div class="expense-form-container">
+        <div class="input-row">
+            <div class="input-group">
+                <label for="expense-description">Description</label>
+                <input type="text" id="expense-description" placeholder="What did you spend on?">
+            </div>
+            <div class="input-group">
+                <label for="expense-amount">Amount ($)</label>
+                <input type="number" id="expense-amount" placeholder="0.00" step="0.01">
+            </div>
+        </div>
+        <div class="expense-actions">
+            <button class="btn btn-add" onclick="addExpense()">
+                <span class="btn-icon">+</span> Add Expense
+            </button>
+            <button class="btn btn-clear" onclick="clearExpenses()">
+                <span class="btn-icon">×</span> Clear All
+            </button>
+        </div>
+    </div>
+    
+    <div class="expense-summary">
+        <div class="summary-card">
+            <div class="summary-label">Total Expenses</div>
+            <div class="summary-value" id="total-expense">$0.00</div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-label">Number of Expenses</div>
+            <div class="summary-value" id="expense-count">0</div>
+        </div>
+    </div>
+    
+    <div class="expense-list-header">
+        <h3>Your Expenses</h3>
+        <div class="sort-options">
+            <select id="expense-sort" onchange="sortExpenses()">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="highest">Highest Amount</option>
+                <option value="lowest">Lowest Amount</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="expense-list" class="expense-list"></div>
+</div>
+    
+                    <!-- Todo App -->
+                    <div class="app-content" id="todo">
+                        <div class="app-title">Todo List</div>
+                        <div class="input-group">
+                            <label for="todo-input">Add new task:</label>
+                            <input type="text" id="todo-input" placeholder="Enter your task">
+                        </div>
+                        <button class="btn" onclick="addTodo()">Add Task</button>
+                        <button class="btn" onclick="clearTodos()">Clear All</button>
+                        <div id="todo-list"></div>
+                    </div>
+    
+                    <!-- Text to Speech -->
+                    <div class="app-content" id="tts">
+                        <div class="app-title">Text to Speech</div>
+                        <div class="input-group">
+                            <label for="tts-text">Enter text to speak:</label>
+                            <textarea id="tts-text" rows="5" placeholder="Type your text here..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="tts-rate">Speech Rate:</label>
+                            <input type="range" id="tts-rate" min="0.5" max="2" step="0.1" value="1">
+                            <span id="rate-value">1.0</span>
+                        </div>
+                        <button class="btn" onclick="speakText()">Speak</button>
+                        <button class="btn" onclick="stopSpeech()">Stop</button>
+                    </div>
+    
+                    <!-- BMI Calculator -->
+                    <div class="app-content" id="bmi">
+                        <div class="app-title">BMI Calculator</div>
+                        <div class="input-group">
+                            <label for="bmi-weight">Weight (kg):</label>
+                            <input type="number" id="bmi-weight" placeholder="Enter weight in kg" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label for="bmi-height">Height (cm):</label>
+                            <input type="number" id="bmi-height" placeholder="Enter height in cm" step="0.1">
+                        </div>
+                        <button class="btn" onclick="calculateBMI()">Calculate BMI</button>
+                        <div class="result-box" id="bmi-result">Enter your weight and height to calculate BMI</div>
+                    </div>
+    
+                    <!-- Loan Calculator -->
+                    <div class="app-content" id="loan">
+                        <div class="app-title">Loan Calculator</div>
+                        <div class="input-group">
+                            <label for="loan-amount">Loan Amount:</label>
+                            <input type="number" id="loan-amount" placeholder="Enter loan amount" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="loan-rate">Interest Rate (% per year):</label>
+                            <input type="number" id="loan-rate" placeholder="Enter interest rate" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="loan-term">Loan Term (years):</label>
+                            <input type="number" id="loan-term" placeholder="Enter loan term" step="0.1">
+                        </div>
+                        <button class="btn" onclick="calculateLoan()">Calculate</button>
+                        <div class="result-box" id="loan-result">Enter loan details to calculate monthly payment</div>
+                    </div>
+    
+                    <!-- Tip Calculator -->
+                    <div class="app-content" id="tip">
+                        <div class="app-title">Tip Calculator</div>
+                        <div class="input-group">
+                            <label for="bill-amount">Bill Amount:</label>
+                            <input type="number" id="bill-amount" placeholder="Enter bill amount" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="tip-percentage">Tip Percentage:</label>
+                            <input type="number" id="tip-percentage" placeholder="Enter tip percentage" value="15">
+                        </div>
+                        <div class="input-group">
+                            <label for="people-count">Number of People:</label>
+                            <input type="number" id="people-count" placeholder="Enter number of people" value="1" min="1">
+                        </div>
+                        <button class="btn" onclick="calculateTip()">Calculate Tip</button>
+                        <div class="result-box" id="tip-result">Enter bill details to calculate tip</div>
+                    </div>
+    
+                    <!-- Fixed Deposit Calculator -->
+                    <div class="app-content" id="fixed-deposit">
+                        <div class="app-title">Fixed Deposit Calculator</div>
+                        <div class="input-group">
+                            <label for="fd-principal">Principal Amount:</label>
+                            <input type="number" id="fd-principal" placeholder="Enter principal amount" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="fd-rate">Interest Rate (% per year):</label>
+                            <input type="number" id="fd-rate" placeholder="Enter interest rate" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="fd-term">Term (years):</label>
+                            <input type="number" id="fd-term" placeholder="Enter term in years" step="0.1">
+                        </div>
+                        <button class="btn" onclick="calculateFD()">Calculate</button>
+                        <div class="result-box" id="fd-result">Enter deposit details to calculate maturity amount</div>
+                    </div>
+    
+                    <!-- Age Calculator -->
+                    <div class="app-content" id="age">
+                        <div class="app-title">Advanced Age Calculator</div>
+                        <div class="input-group">
+                            <label for="birth-date">Birth Date:</label>
+                            <input type="date" id="birth-date">
+                        </div>
+                        <div class="input-group">
+                            <label for="target-date">Calculate Age On (optional):</label>
+                            <input type="date" id="target-date">
+                        </div>
+                        <button class="btn" onclick="calculateAge()">Calculate Age</button>
+                        <div class="result-box" id="age-result">Select your birth date to calculate your age</div>
+                    </div>
+    
+                    <!-- Stopwatch -->
+                    <div class="app-content" id="stopwatch">
+                        <div class="app-title">Stopwatch</div>
+                        <div class="timer-display" id="timer-display">00:00:00</div>
+                        <button class="btn" onclick="startTimer()">Start</button>
+                        <button class="btn" onclick="pauseTimer()">Pause</button>
+                        <button class="btn" onclick="resetTimer()">Reset</button>
+                        <button class="btn" onclick="lapTimer()">Lap</button>
+                        <div id="lap-times"></div>
+                    </div>
+    
+                    <!-- Notes App -->
+                    <div class="app-content" id="notes">
+                        <div class="app-title">Notes</div>
+                        <div class="input-group">
+                            <label for="note-title">Note Title:</label>
+                            <input type="text" id="note-title" placeholder="Enter note title">
+                        </div>
+                        <div class="input-group">
+                            <label for="note-content">Note Content:</label>
+                            <textarea id="note-content" rows="5" placeholder="Enter note content"></textarea>
+                        </div>
+                        <button class="btn" onclick="addNote()">Add Note</button>
+                        <button class="btn" onclick="clearNotes()">Clear All</button>
+                        <div class="notes-list" id="notes-list"></div>
+                    </div>
+    
+                    <!-- Poll System -->
+                    <div class="app-content" id="poll">
+                        <div class="app-title">Poll System</div>
+                        <div class="input-group">
+                            <label for="poll-question">Poll Question:</label>
+                            <input type="text" id="poll-question" placeholder="Enter your poll question">
+                        </div>
+                        <div class="input-group">
+                            <label for="poll-options">Poll Options (one per line):</label>
+                            <textarea id="poll-options" rows="4" placeholder="Option 1&#10;Option 2&#10;Option 3"></textarea>
+                        </div>
+                        <button class="btn" onclick="createPoll()">Create Poll</button>
+                        <div id="poll-container"></div>
+                    </div>
+    
+                    <!-- Dictionary -->
+<div class="app-content" id="dictionary">
+    <div class="app-title">Dictionary</div>
+    <div class="input-group">
+        <label for="dictionary-word">Enter word to define:</label>
+        <input type="text" id="dictionary-word" placeholder="Enter a word">
+    </div>
+    <button class="btn" onclick="lookupWord()">Look Up</button>
+    <div class="loading-spinner" id="dictionary-loading" style="display: none;">
+        <div class="spinner"></div>
+        <div>Searching for definition...</div>
+    </div>
+    <div class="result-box" id="dictionary-result">
+        <div class="placeholder-text">Enter a word to get its definition</div>
+    </div>
+    <div class="error-message" id="dictionary-error" style="display: none;"></div>
+</div>
+        <script src="script.js"></script>
+</body>
+</html>
